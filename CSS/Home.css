@@ -2,35 +2,45 @@
 
 /* Navigation bar styles */
 nav {
-    background-color: rgb(112, 112, 241);
+    display: flex;
+    align-items: center;
+    background-color: #F8F7FD;
     padding-top: 25px;
     padding-bottom: 25px;
-    position: relative;
+    position: relative;             
 }
+
+.navbar-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color:rgb(110, 87, 224);
+    margin-left: 300px;
+    margin-right: auto;
+}
+
 nav ul {
     display: flex;
     gap: 25px;
+    justify-content: right;
+    margin-right: 200px;
 }
 
 nav li {
     list-style: none;
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgb(0, 0, 0);
 }
 
 nav a {
     text-decoration: none;
     color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-align: center;
 }
 
 /* Home page body styles */
 body {
     margin: 0;
-}
-
-.home-body {
-    background-color: #ffffff;
+    background-color: rgb(89, 89, 224);
 }
 
 /* Hero section styles */
@@ -40,6 +50,7 @@ body {
     margin-right: auto;
     width: 40%;
     height: auto;
+    border-radius: 25px;
 }
 
 @media screen and (max-width: 768px) {
@@ -50,12 +61,13 @@ body {
 
 .hero-section-heading {
     text-align: center;
-    font-size: auto;
-    color: rgb(0, 0, 0);
+    font-size: 40px;
+    color: rgb(255, 255, 255);
     margin-top: 50px;
     margin-bottom: 50px;
     margin-right: 20px;
     margin-left: 20px;
+    font-weight: 600;
 }
 
 .quiz-button {
@@ -126,6 +138,7 @@ body {
         margin-right: 80px;
         position: relative;
         top: 15px;
+        z-index: 100;
     }
 
 
@@ -142,5 +155,5 @@ body {
         transform: translateY(-5px) rotate(-45deg);
         position: fixed;
     }
-}
 
+}
