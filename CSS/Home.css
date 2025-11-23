@@ -13,7 +13,7 @@ nav {
 .navbar-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color:rgb(110, 87, 224);
+    color: #E91C22;
     margin-left: 260px;
     margin-right: auto;
 }
@@ -40,7 +40,7 @@ nav a {
 /* Home page body styles */
 body {
     margin: 0;
-    background-color: rgb(89, 89, 224);
+    background-color: #1b0c0ffa;
 }
 
 /* Hero section styles */
@@ -184,5 +184,11 @@ body {
 .hero-card svg {
     width: 48px;
     height: 48px;
-    color: rgb(110, 87, 224);
+    color: #E91C22;
 }
+
+.hero-card h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #E91C22;}
