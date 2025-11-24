@@ -48,17 +48,16 @@ nav li:hover::after{
     width: 100%;
 }
 
-nav li:first-child:after {
-    background: #E91C22;
-        content: '';
+nav li:nth-child(2):after {
+    content: '';
     width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
-    background: red;
+    background: #E91C22;
     position: absolute;
-    transition: width 0.3s ease;
-}
+        transition: width 0.3s ease;
+    }
 
 
 
@@ -190,39 +189,4 @@ body {
         position: fixed;
     }
     
-}
-
-.hero-card-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.hero-card {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    height: 180px;
-    margin-bottom: 20px;
-    padding: 15px;
-}
-
-
-.hero-card p {
-    font-size: 16px;
-}
-.hero-card svg {
-    width: 48px;
-    height: 48px;
-    color: #E91C22;
-}
-
-.hero-card h2 {
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #E91C22;
 }
