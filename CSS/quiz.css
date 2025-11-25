@@ -190,3 +190,56 @@ body {
     }
     
 }
+
+/* Quiz page styles */
+.quiz-container {
+    max-width: 660px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-question {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #E91C22;
+}
+
+.quiz-option {
+    background-color: #9b787a;
+    color: #fff;
+
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quiz-progress {
+    font-size: 1.2rem;
+    color: #000000be;
+    position: relative;
+    top: -12px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #000000;
+    color: red;
+    border-radius: 5px;
+    overflow: hidden;
+}
