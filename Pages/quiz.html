@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="/CSS/quiz.css">
-    <script src="index.js" defer></script>
+    <script src="../index.js" defer></script>
 </head>
 <body>    
     <header>
@@ -30,11 +30,18 @@
             <div class="quiz-question">Question 1 of 8</div>
             <div class="quiz-progress">13%</div>
         </div>
-                   <div class="progress-bar"></div>
-        <div class="quiz-option"></div>
-        <div class="quiz-option"></div>
-        <div class="quiz-option"></div>
-        <div class="quiz-option"></div>     
+        <div class="progress-bar"></div>
+        <div id="question"></div>
+        <div id="answer-buttons">
+            <button class="quiz-option">Answer 1</button>
+            <button class="quiz-option">Answer 2</button>
+            <button class="quiz-option">Answer 3</button>
+            <button class="quiz-option">Answer 4 </button>
+        </div>
+        <div class="button-style">
+            <button id="next-btn">Next</button>
+            <button class="previous">Previous</button>
+        </div>
     </div>
 </body>
 </html>
