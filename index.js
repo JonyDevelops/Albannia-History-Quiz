@@ -1,3 +1,4 @@
+// hamburger nav bar 
 function togglemenu() {
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
@@ -80,103 +81,22 @@ const questions = [
     }
 ];
 
-const questionElement = document.getElementById('question');
-const answerButton = document.getElementById('answer-buttons');
-const nextButton = document.getElementById('next-btn');
-const questionCounter = document.getElementById('question-counter');
-const progressBar = document.querySelector('.progress-bar');
+//
 
-let currentQuestionindex = 0;
+// Quiz
+
+//To do List
+
+//1. How to display ARRAYS of OBJECTS to html
+//2. event listener question button
+//3. event listener to answer-button
+//4. event listener to 'next' button
+//5. event listener to question button
+
+const questionID = document.getElementById('question');
+const answerBtn = document.getElementById('answer-buttons');
+
 let score = 0;
+let currentQuizIndex = 0;
 
-function startQuiz(){
-    currentQuestionindex = 0;
-    score = 0;
-    nextButton.innerHTML = "Next";
-    showQuestion();
-}
-
-function resetState() {
-    nextButton.style.display = "none"; 
-    while(answerButton.firstChild){
-        answerButton.removeChild(answerButton.firstChild);
-    }
-}
-
-function showQuestion(){
-    resetState();
-
-    let currentQuestion = questions[currentQuestionindex];
-    let questionNo = currentQuestionindex + 1; 
-
-    questionCounter.innerHTML = `Question ${questionNo} of ${questions.length}`;
-
-    const progressPercent = (questionNo / questions.length) * 100;
-    progressBar.style.width = `${progressPercent}%`;
-
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-
-    currentQuestion.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerHTML = answer.text; 
-        button.classList.add("quiz-option");
-        answerButton.appendChild(button);
-
-        if(answer.correct){
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener("click", selectAnswer);
-    });
-}
-
-function selectAnswer(e) {
-    const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct === "true";
-    
-    if(isCorrect){
-        selectedBtn.classList.add("correct");
-        score++;
-    } else {
-        selectedBtn.classList.add("incorrect");
-    }
-
-    Array.from(answerButton.children).forEach(button => {
-        button.disabled = true;
-        if(button.dataset.correct === "true"){
-            button.classList.add("correct");
-        }
-    });
-    nextButton.style.display = "block";
-}
-
-function showScore() {
-    resetState();
-    
-    progressBar.style.width = '100%';
-    
-    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-    nextButton.innerHTML = "Play Again"; 
-    nextButton.style.display = "block";
-    
-    questionCounter.innerHTML = '';
-}
-
-function handleNextButton() {
-    currentQuestionindex++;
-    if(currentQuestionindex < questions.length){
-        showQuestion();
-    } else {
-        showScore();
-    }
-}
-
-nextButton.addEventListener("click", () => {
-    if(currentQuestionindex >= questions.length){
-        startQuiz();
-    } else {
-        handleNextButton();
-    }
-});
-
-
-startQuiz();
+fruits.forEach(fruit => console.log(questions.question));
