@@ -223,6 +223,22 @@ body {
 
 }
 
+.btn {
+    color: #000000;
+   border: rgba(0, 0, 0, 0.598), 1px solid;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    background: none;
+    text-align: left;
+    width: 100%;
+    background-color:
+}
+
 .quiz-option:hover {
     background-color: black;
     color: white;
@@ -264,7 +280,6 @@ body {
      display: flex;
     justify-content: center;
     gap: 5px;
-    cursor: ;
 }
 
 #next-btn:hover {
@@ -273,4 +288,10 @@ body {
 
 .previous:hover {
     transform: scale(1.2);
+}
+
+#question {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

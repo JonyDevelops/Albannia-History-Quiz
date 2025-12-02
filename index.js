@@ -1,5 +1,3 @@
-/* Hamburger Menu Toggle */
-
 function togglemenu() {
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
@@ -15,10 +13,6 @@ const navLinks = document.querySelectorAll('nav a');
             });
         });
 
-/* End of Hamburger Menu Toggle */
-
-/* Quiz Functionality */
-
 const questions = [
     { question: "When did Albania declare its independence?",
         answers: [
@@ -30,10 +24,10 @@ const questions = [
     },
     { question: "Who was the first king of Albania?",
         answers: [
-            { text: "Zog I", correct: true },
-            { text: "Skanderbeg", correct: false },
-            { text: "Ismail Qemali", correct: false },
-            { text: "Ahmet Zogu", correct: false },
+                { text: "Zog I", correct: true },
+                { text: "Skanderbeg", correct: false },
+                { text: "Ismail Qemali", correct: false },
+                { text: "Ahmet Zogu", correct: false },
         ]
     },
     { question: "What is the capital city of Albania?",
@@ -88,3 +82,101 @@ const questions = [
 
 const questionElement = document.getElementById('question');
 const answerButton = document.getElementById('answer-buttons');
+const nextButton = document.getElementById('next-btn');
+const questionCounter = document.getElementById('question-counter');
+const progressBar = document.querySelector('.progress-bar');
+
+let currentQuestionindex = 0;
+let score = 0;
+
+function startQuiz(){
+    currentQuestionindex = 0;
+    score = 0;
+    nextButton.innerHTML = "Next";
+    showQuestion();
+}
+
+function resetState() {
+    nextButton.style.display = "none"; 
+    while(answerButton.firstChild){
+        answerButton.removeChild(answerButton.firstChild);
+    }
+}
+
+function showQuestion(){
+    resetState();
+
+    let currentQuestion = questions[currentQuestionindex];
+    let questionNo = currentQuestionindex + 1; 
+
+    questionCounter.innerHTML = `Question ${questionNo} of ${questions.length}`;
+
+    const progressPercent = (questionNo / questions.length) * 100;
+    progressBar.style.width = `${progressPercent}%`;
+
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerHTML = answer.text; 
+        button.classList.add("quiz-option");
+        answerButton.appendChild(button);
+
+        if(answer.correct){
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener("click", selectAnswer);
+    });
+}
+
+function selectAnswer(e) {
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    
+    if(isCorrect){
+        selectedBtn.classList.add("correct");
+        score++;
+    } else {
+        selectedBtn.classList.add("incorrect");
+    }
+
+    Array.from(answerButton.children).forEach(button => {
+        button.disabled = true;
+        if(button.dataset.correct === "true"){
+            button.classList.add("correct");
+        }
+    });
+    nextButton.style.display = "block";
+}
+
+function showScore() {
+    resetState();
+    
+    progressBar.style.width = '100%';
+    
+    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+    nextButton.innerHTML = "Play Again"; 
+    nextButton.style.display = "block";
+    
+    questionCounter.innerHTML = '';
+}
+
+function handleNextButton() {
+    currentQuestionindex++;
+    if(currentQuestionindex < questions.length){
+        showQuestion();
+    } else {
+        showScore();
+    }
+}
+
+nextButton.addEventListener("click", () => {
+    if(currentQuestionindex >= questions.length){
+        startQuiz();
+    } else {
+        handleNextButton();
+    }
+});
+
+
+startQuiz();
