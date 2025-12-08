@@ -14,6 +14,7 @@ const navLinks = document.querySelectorAll('nav a');
             });
         });
 
+//quiz
 const questions = [
     { question: "When did Albania declare its independence?",
         answers: [
@@ -85,18 +86,51 @@ const questions = [
 
 // Quiz
 
-//To do List
-
-//1. How to display ARRAYS of OBJECTS to html
-//2. event listener question button
-//3. event listener to answer-button
-//4. event listener to 'next' button
-//5. event listener to question button
-
-const questionID = document.getElementById('question');
+const questionElement = document.getElementById('questionDiv');
 const answerBtn = document.getElementById('answer-buttons');
+const nextBtn = document.getElementById('next-btn');
 
 let score = 0;
-let currentQuizIndex = 0;
+let currentQuestionIndex = 0;
 
-fruits.forEach(fruit => console.log(questions.question));
+function startQuiz(){
+    score = 0;
+    currentQuestionIndex = 0;
+    nextBtn.innerHTML = "Next";
+    showQuestion();
+}
+
+function showQuestion(){
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.textContent = questionNo + '.' + currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+    const button = document.createElement('button');
+    button.textContent = answer.text;
+    answerBtn.appendChild(button);
+    button.classList.add('answer-button');
+    })
+}
+
+startQuiz();
+
+let answerButtons = document.querySelectorAll('.answer-button');
+
+answerButtons.forEach( btn => {
+    btn.addEventListener('click', (event) => {
+        console.log(questions[currentQuestionIndex].question);
+        console.log(event.target.textContent);
+        let submittedAnswer = event.target.textContent;
+        let currentQuestionAnswers = questions[currentQuestionIndex].answers;
+        let answer = currentQuestionAnswers.find(a => a.text === submittedAnswer);
+        console.log(answer);
+        
+        if(submittedAnswer) {
+            (score + 1);
+        }
+    })
+})
+
+
+    
