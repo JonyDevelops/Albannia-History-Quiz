@@ -153,7 +153,8 @@ function resetState(){
 
     function handleNextButton(){
         currentQuestionIndex++;
-        if(currentQuestionIndex === questions.length){
+        
+        if(currentQuestionIndex < questions.length){
             showQuestion();
         }
         else{
@@ -168,16 +169,13 @@ function resetState(){
         nextBtn.style.display = "block";
     }
 
-    nextBtn.addEventListener("click", (){
+    nextBtn.addEventListener("click", () => {
         if(currentQuestionIndex < questions.length){
             handleNextButton();
         }
         else{
             startQuiz();    
         }
-    })
+    });
+
     startQuiz();
-
-
-
-    
