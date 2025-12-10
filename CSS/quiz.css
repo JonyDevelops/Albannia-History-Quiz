@@ -239,6 +239,15 @@ body {
     background-color:
 }
 
+.answer-button:hover([disabled]){
+    background-color: #000;
+    color: white;
+}
+
+.answer-button:disabled{
+    cursor: not-allowed;
+}
+
 .quiz-option:hover {
     background-color: black;
     color: white;
@@ -294,4 +303,12 @@ body {
     font-size: 28px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.correct {
+    background: #9aeabc;
+}
+
+.incorrect{
+    background: #ff9393;
 }
