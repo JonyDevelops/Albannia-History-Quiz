@@ -276,7 +276,7 @@ body {
 }
 
 #next-btn, .previous{
-      background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
+    background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
     -webkit-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
     -moz-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
     display: flex;

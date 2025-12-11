@@ -135,7 +135,7 @@ function resetState(){
         selectedBtn.classList.add('correct');
         score++;
         }
-
+        
         else{
         selectedBtn.classList.add('incorrect');
         }
@@ -150,7 +150,6 @@ function resetState(){
         nextBtn.style.display = "block";
     }
         
-
     function handleNextButton(){
         currentQuestionIndex++;
         
