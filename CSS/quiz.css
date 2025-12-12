@@ -312,3 +312,7 @@ body {
 .incorrect{
     background: #ff9393;
 }
+
+p {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

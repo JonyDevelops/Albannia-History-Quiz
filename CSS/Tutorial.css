@@ -190,3 +190,41 @@ body {
     }
     
 }
+
+.tutorial-card {
+    max-width: 660px;
+    margin: 18px auto;  
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-h2 {
+    color: #E91C22  ;
+}
+
+.tutorial-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;         
+    color: white;
+}
+
+.tutorial-title h1 {
+    font-size: 1.7rems;
+}
+
+.tutorial-title p {
+    font-size: 1.5rems;
+}
+
+.tutorial-card p {
+    color:hsl(0, 0%, 0%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
