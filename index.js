@@ -189,7 +189,20 @@ function displayResults() {
     const maxScore = parseInt(localStorage.getItem('maxScore'));
 
     if (isNaN(finalScore)) {
-        resultsContainer.innerHTML = '<h2>Quiz data not found. Please take the quiz first.</h2><a href="./quiz.html" class="quiz-button">Start Quiz</a>';
+        // Clear existing content
+        resultsContainer.textContent = '';
+        
+        // Create elements safely without innerHTML
+        const heading = document.createElement('h2');
+        heading.textContent = 'Quiz data not found. Please take the quiz first.';
+        
+        const link = document.createElement('a');
+        link.href = './quiz.html';
+        link.className = 'quiz-button';
+        link.textContent = 'Start Quiz';
+        
+        resultsContainer.appendChild(heading);
+        resultsContainer.appendChild(link);
         return;
     }
 
@@ -216,18 +229,48 @@ function displayResults() {
         color = "red";
     }
 
-    resultsContainer.innerHTML = `
-        <h1 style="color: white; text-align: center;">Your Results</h1>
-        <div class="result-card">
-            <h2>Your Score: ${finalScore} / ${maxScore}</h2>
-            <p>Percentage: ${percentage.toFixed(0)}%</p>
-            <h3 style="color: ${color};">${level}</h3>
-            <p>${feedback}</p>
-        </div>
-        <button id="restart-btn" class="quiz-button">Play Again</button>
-    `;
+    // Clear existing content
+    resultsContainer.textContent = '';
     
-    document.getElementById('restart-btn').addEventListener('click', () => {
+    // Create all elements safely using DOM methods
+    const title = document.createElement('h1');
+    title.style.color = 'white';
+    title.style.textAlign = 'center';
+    title.textContent = 'Your Results';
+    
+    const resultCard = document.createElement('div');
+    resultCard.className = 'result-card';
+    
+    const scoreHeading = document.createElement('h2');
+    scoreHeading.textContent = `Your Score: ${finalScore} / ${maxScore}`;
+    
+    const percentagePara = document.createElement('p');
+    percentagePara.textContent = `Percentage: ${percentage.toFixed(0)}%`;
+    
+    const levelHeading = document.createElement('h3');
+    levelHeading.style.color = color;
+    levelHeading.textContent = level;
+    
+    const feedbackPara = document.createElement('p');
+    feedbackPara.textContent = feedback;
+    
+    const restartBtn = document.createElement('button');
+    restartBtn.id = 'restart-btn';
+    restartBtn.className = 'quiz-button';
+    restartBtn.textContent = 'Play Again';
+    
+    // Append all elements
+    resultCard.appendChild(scoreHeading);
+    resultCard.appendChild(percentagePara);
+    resultCard.appendChild(levelHeading);
+    resultCard.appendChild(feedbackPara);
+    
+    resultsContainer.appendChild(title);
+    resultsContainer.appendChild(resultCard);
+    resultsContainer.appendChild(restartBtn);
+    
+    // Add event listener
+    restartBtn.addEventListener('click', () => {
         window.location.href = './quiz.html';
     });
 }
