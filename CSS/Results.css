@@ -194,3 +194,54 @@ body {
 p {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Results page */
+#results-container {
+    max-width: 660px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.result-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(233, 28, 34, 0.4); 
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.result-card h2 {
+    color: #E91C22;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.result-card h3 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+}
+
+.result-card p {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.quiz-button {
+    display: block;
+    margin: 25px auto;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
+    -webkit-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
+    -moz-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
+    transition: transform 0.2s;
+}
+
+.quiz-button:hover {
+    transform: scale(1.05);
+}

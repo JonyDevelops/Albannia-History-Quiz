@@ -1,4 +1,3 @@
-// hamburger nav bar 
 function togglemenu() {
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
@@ -14,7 +13,6 @@ const navLinks = document.querySelectorAll('nav a');
             });
         });
 
-//quiz
 const questions = [
     { question: "When did Albania declare its independence?",
         answers: [
@@ -82,16 +80,17 @@ const questions = [
     }
 ];
 
-//
-
-// Quiz
-
 const questionElement = document.getElementById('questionDiv');
 const answerBtn = document.getElementById('answer-buttons');
 const nextBtn = document.getElementById('next-btn');
+const MAX_SCORE_PER_QUESTION = 4; 
 
 let score = 0;
 let currentQuestionIndex = 0;
+
+if (questionElement && answerBtn && nextBtn) { 
+    startQuiz();
+}
 
 function startQuiz(){
     score = 0;
@@ -102,9 +101,11 @@ function startQuiz(){
 
 function showQuestion(){
     resetState();
+    document.getElementById('question-counter').textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.textContent = questionNo + '.' + currentQuestion.question;
+    
+    questionElement.textContent = currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement('button');
@@ -133,7 +134,7 @@ function resetState(){
 
         if(isCorrect){
         selectedBtn.classList.add('correct');
-        score++;
+        score = score + MAX_SCORE_PER_QUESTION; 
         }
         
         else{
@@ -157,24 +158,76 @@ function resetState(){
             showQuestion();
         }
         else{
-            showScore();
+            finishQuiz();
         }
     }
 
-    function showScore(){
-        resetState();
-        questionElement.innerText = `You scored ${score} out of ${questions.length}!`;
-        nextBtn.innerText = "Play again";
-        nextBtn.style.display = "block";
+    function finishQuiz(){
+        localStorage.setItem('quizScore', score);
+        localStorage.setItem('totalQuestions', questions.length);
+        localStorage.setItem('maxScore', questions.length * MAX_SCORE_PER_QUESTION);
+        
+        window.location.href = './Results.html';
     }
 
-    nextBtn.addEventListener("click", () => {
-        if(currentQuestionIndex < questions.length){
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
             handleNextButton();
-        }
-        else{
-            startQuiz();    
-        }
-    });
+        });
+    }
 
-    startQuiz();
+
+const resultsContainer = document.getElementById('results-container');
+const restartButton = document.getElementById('restart-btn');
+
+if (resultsContainer) { 
+    displayResults();
+}
+
+function displayResults() {
+    const finalScore = parseInt(localStorage.getItem('quizScore'));
+    const maxScore = parseInt(localStorage.getItem('maxScore'));
+
+    if (isNaN(finalScore)) {
+        resultsContainer.innerHTML = '<h2>Quiz data not found. Please take the quiz first.</h2><a href="./quiz.html" class="quiz-button">Start Quiz</a>';
+        return;
+    }
+
+    const percentage = (finalScore / maxScore) * 100;
+    let level = "";
+    let feedback = "";
+    let color = "";
+
+    if (finalScore >= 24) { 
+        level = "Expert";
+        feedback = "Outstanding! Your deep knowledge of Albanian history is truly impressive. You are a history master!";
+        color = "green";
+    } else if (finalScore >= 16) { 
+        level = "Good Knowledge";
+        feedback = "Well done! You have a solid understanding of key events and figures. Keep exploring to reach expert level.";
+        color = "blue";
+    } else if (finalScore >= 8) { 
+        level = "Basic Understanding";
+        feedback = "You've laid a good foundation. Focus on reviewing specific historical periods to strengthen your knowledge.";
+        color = "orange";
+    } else { 
+        level = "Beginner";
+        feedback = "This is a great starting point! We recommend using the tutorial resources to begin your journey into Albanian history.";
+        color = "red";
+    }
+
+    resultsContainer.innerHTML = `
+        <h1 style="color: white; text-align: center;">Your Results</h1>
+        <div class="result-card">
+            <h2>Your Score: ${finalScore} / ${maxScore}</h2>
+            <p>Percentage: ${percentage.toFixed(0)}%</p>
+            <h3 style="color: ${color};">${level}</h3>
+            <p>${feedback}</p>
+        </div>
+        <button id="restart-btn" class="quiz-button">Play Again</button>
+    `;
+    
+    document.getElementById('restart-btn').addEventListener('click', () => {
+        window.location.href = './quiz.html';
+    });
+}
