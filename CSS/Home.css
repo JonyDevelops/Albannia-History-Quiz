@@ -11,7 +11,7 @@ nav {
 }
 
 /* mobile small */
-@media screen(max-width: 321px){
+@media screen and (max-width: 321px){
     nav{
         padding-right: 1000px;
     }
@@ -70,13 +70,12 @@ nav li:hover::after{
 }
 
 nav li:first-child:after {
-    background: #E91C22;
-        content: '';
+    content: '';
     width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
-    background: red;
+    background: #E91C22;
     position: absolute;
     transition: width 0.3s ease;
 }
@@ -104,7 +103,7 @@ body {
     border-radius: 25px;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .hero-image {
         width: 80%;
     }
@@ -126,7 +125,6 @@ body {
     margin: 0 auto;
     padding: 15px 30px;
     font-size: 20px;
-    background-color: rgb(112, 112, 241);
     color: white;
     border: none;
     border-radius: 5px;
@@ -134,11 +132,9 @@ body {
     margin-top: 20px;
     margin-bottom: 25px;
     background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
--webkit-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
--moz-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
 }
 
-.quiz-botton:hover {
+.quiz-button:hover {
     transform: scale(1.2);
 }
 
@@ -227,6 +223,7 @@ body {
     gap: 17px;
     margin-top: 30px;
     margin-bottom: 30px;
+    margin: 15px;
 }
 
 .hero-card {
@@ -239,18 +236,76 @@ body {
     padding: 15px;
 }
 
-@media (max-width: 769px) {
-    .hero-card p {
-        font-size: 0.3rem;
+/* mobile small */
+@media (max-width: 330px) {
+    .hero-card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        left: 500px;
+    }
+    .hero-section h1 {
+        font-size: 28px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px
     }
 }
 
-.hero-card p {
-    font-size: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* mobile medium */
+@media (max-width: 380px) {
+    .hero-card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 70px;
+    }
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        left: 500px;
+    }
+    .hero-section h1 {
+        font-size: 28px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;}
+} 
+
+/* mobile large */
+@media (max-width: 426px) {
+    .hero-card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 60px;
+    }
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        left: 10px;
+    }
+    .hero-section h1 {
+        font-size: 32px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;}
 }
+
+
+
 .hero-card svg {
-    width: 48px;
+    width: 78px;
     height: 48px;
     color: #E91C22;
 }
@@ -274,3 +329,4 @@ footer p {
     align-items: center;
     margin: 5px;
 }
+

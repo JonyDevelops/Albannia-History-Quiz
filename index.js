@@ -189,10 +189,8 @@ function displayResults() {
     const maxScore = parseInt(localStorage.getItem('maxScore'));
 
     if (isNaN(finalScore)) {
-        // Clear existing content
         resultsContainer.textContent = '';
         
-        // Create elements safely without innerHTML
         const heading = document.createElement('h2');
         heading.textContent = 'Quiz data not found. Please take the quiz first.';
         
@@ -229,10 +227,8 @@ function displayResults() {
         color = "red";
     }
 
-    // Clear existing content
     resultsContainer.textContent = '';
     
-    // Create all elements safely using DOM methods
     const title = document.createElement('h1');
     title.style.color = 'white';
     title.style.textAlign = 'center';
@@ -259,7 +255,6 @@ function displayResults() {
     restartBtn.className = 'quiz-button';
     restartBtn.textContent = 'Play Again';
     
-    // Append all elements
     resultCard.appendChild(scoreHeading);
     resultCard.appendChild(percentagePara);
     resultCard.appendChild(levelHeading);
@@ -269,7 +264,6 @@ function displayResults() {
     resultsContainer.appendChild(resultCard);
     resultsContainer.appendChild(restartBtn);
     
-    // Add event listener
     restartBtn.addEventListener('click', () => {
         window.location.href = './quiz.html';
     });
