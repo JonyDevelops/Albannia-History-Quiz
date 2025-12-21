@@ -1,17 +1,26 @@
+
 function togglemenu() {
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
     hamburger.classList.toggle('active');
     nav.classList.toggle('active');
+    // Prevent background scroll when menu is open
+    if (nav.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
 }
 
-const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            document.querySelector('.hamburger').classList.remove('active');
-            document.querySelector('nav').classList.remove('active');
-            });
-        });
+
+// Close menu on link click (mobile)
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.hamburger').classList.remove('active');
+        document.querySelector('nav').classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
 
 const questions = [
     { question: "When did Albania declare its independence?",

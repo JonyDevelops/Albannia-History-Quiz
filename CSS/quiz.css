@@ -7,15 +7,16 @@ nav {
     background-color: #F8F7FD;
     padding-top: 25px;
     padding-bottom: 25px;
-    position: relative;             
+    position: relative;
+    justify-content: space-around;
 }
 
 .navbar-title {
     font-size: 1.5rem;
     font-weight: bold;
     color: #E91C22;
-    margin-left: 260px;
-    margin-right: auto;
+    display: flex;
+    margin-left: 50px;
 }
 
 nav ul {
