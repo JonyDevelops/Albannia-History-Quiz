@@ -4,7 +4,7 @@ function togglemenu() {
     const nav = document.querySelector('nav');
     hamburger.classList.toggle('active');
     nav.classList.toggle('active');
-    // Prevent background scroll when menu is open
+    
     if (nav.classList.contains('active')) {
         document.body.style.overflow = 'hidden';
     } else {

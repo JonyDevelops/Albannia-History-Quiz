@@ -192,12 +192,18 @@ body {
 }
 
 .tutorial-card {
-    max-width: 660px;
+    width: 40%;
     margin: 18px auto;  
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .tutorial-card {
+        width: 80%;
+    }
 }
 
 .tutorial-h2 {
@@ -217,7 +223,8 @@ body {
 }
 
 .tutorial-title p {
-    font-size: 1.5rems;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin: 25px;
 }
 
 .tutorial-card p {
