@@ -90,6 +90,7 @@ nav li:first-child::before {
     opacity: 1;
 }
 
+
 .hamburger {
     display: none;
     cursor: pointer;
@@ -136,6 +137,7 @@ nav li:first-child::before {
     background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
     transition: transform 0.2s ease;
 }
+
 
 .quiz-button:hover {
     transform: scale(1.1);

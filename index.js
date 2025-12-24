@@ -247,7 +247,9 @@ function displayResults() {
     resultCard.className = 'result-card';
     
     const scoreHeading = document.createElement('h2');
-    scoreHeading.textContent = `Your Score: ${finalScore} / ${maxScore}`;
+    const bR = document.createElement('br');
+    scoreHeading.append(`Your Score: `, bR, `${finalScore} / ${maxScore}`);
+    scoreHeading.classList.add('score-heading');
     
     const percentagePara = document.createElement('p');
     percentagePara.textContent = `Percentage: ${percentage.toFixed(0)}%`;
@@ -255,6 +257,7 @@ function displayResults() {
     const levelHeading = document.createElement('h3');
     levelHeading.style.color = color;
     levelHeading.textContent = level;
+    levelHeading.style.textTransform = 'uppercase';
     
     const feedbackPara = document.createElement('p');
     feedbackPara.textContent = feedback;
