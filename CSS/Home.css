@@ -61,34 +61,17 @@ nav li::after {
     z-index: 1;
 }
 
-nav li::before {
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: 0;
-    width: calc(100% + 10px);
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 0;
-    border-radius: 4px;
-}
 
 nav li:hover::after {
     width: 100%;
-}
-
-nav li:hover::before {
-    opacity: 1;
 }
 
 nav li:first-child::after {
     width: 100%;
 }
 
-nav li:first-child::before {
-    opacity: 1;
-}
+
+
 
 
 .hamburger {
@@ -126,7 +109,7 @@ nav li:first-child::before {
 }
 
 .quiz-button {
-    display: block;
+    display: block;                 
     margin: 20px auto 30px auto;
     padding: 15px 30px;
     font-size: 20px;
@@ -138,6 +121,7 @@ nav li:first-child::before {
     transition: transform 0.2s ease;
 }
 
+button::after,
 
 .quiz-button:hover {
     transform: scale(1.1);

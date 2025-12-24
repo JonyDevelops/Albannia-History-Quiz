@@ -16,7 +16,8 @@ nav {
     font-weight: bold;
     color: #E91C22;
     display: flex;
-    margin-left: 50px;
+        margin-left: 60px;
+    margin-right: auto;
 }
 
 nav ul {
