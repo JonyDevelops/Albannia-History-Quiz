@@ -145,12 +145,12 @@ button::after,
 
 .hero-card svg {
     color: #E91C22;
-    margin-bottom: 15px;
 
 }
 
 .hero-card img {
     color: #E91C22;
+    height: 50px;
 }
 
 .hero-card h2 {

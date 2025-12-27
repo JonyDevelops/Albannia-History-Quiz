@@ -258,6 +258,7 @@ function displayResults() {
     levelHeading.style.color = color;
     levelHeading.textContent = level;
     levelHeading.style.textTransform = 'uppercase';
+    levelHeading.style.fontSize = '1.6rem';
     
     const feedbackPara = document.createElement('p');
     feedbackPara.textContent = feedback;
