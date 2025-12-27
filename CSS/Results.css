@@ -1,19 +1,17 @@
-/* Home page styles */
 
-/* Navigation bar styles */
 nav {
-    display: flex;
     align-items: center;
     background-color: #F8F7FD;
-    padding-top: 25px;
+    display: flex;
     padding-bottom: 25px;
-    position: relative;             
+    padding-top: 25px;
+    position: relative;
 }
 
 .navbar-title {
+    color: #E91C22;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #E91C22;
     margin-left: 60px;
     margin-right: auto;
 }
@@ -26,60 +24,58 @@ nav ul {
 }
 
 nav li {
-    list-style: none;
-    font-size: 1.5rem;
-    text-align: center;
     color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    list-style: none;
     position: relative;
+    text-align: center;
 }
 
-nav li::after{
-    content: '';
-    width: 0%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
+nav li::after {
     background: red;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 0;
     position: absolute;
     transition: width 0.3s ease;
+    width: 0%;
 }
 
-nav li:hover::after{
+nav li:hover::after {
     width: 100%;
 }
 
 nav li:nth-child(3):after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
     background: #E91C22;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 0;
     position: absolute;
-        transition: width 0.3s ease;
-    }
-
-
+    transition: width 0.3s ease;
+    width: 100%;
+}
 
 nav a {
-    text-decoration: none;
     color: rgb(0, 0, 0);
+    text-decoration: none;
 }
 
 /* Home page body styles */
 body {
-    margin: 0;
     background-color: #000000e1;
+    margin: 0;
 }
 
 /* Hero section styles */
 .hero-image {
+    border-radius: 25px;
     display: block;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
-    height: auto;
-    border-radius: 25px;
 }
 
 @media screen and (max-width: 768px) {
@@ -89,77 +85,75 @@ body {
 }
 
 .hero-section-heading {
-    text-align: center;
-    font-size: 40px;
     color: rgb(255, 255, 255);
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-right: 20px;
-    margin-left: 20px;
+    font-size: 40px;
     font-weight: 600;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+    text-align: center;
 }
 
 .quiz-button {
-    display: block;
-    margin: 0 auto;
-    padding: 15px 30px;
-    font-size: 20px;
+    -moz-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
+    -webkit-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
+    background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
     background-color: rgb(112, 112, 241);
-    color: white;
     border: none;
     border-radius: 5px;
+    color: white;
     cursor: pointer;
-    margin-top: 20px;
+    display: block;
+    font-size: 20px;
+    margin: 0 auto;
     margin-bottom: 25px;
-    background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
--webkit-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
--moz-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
+    margin-top: 20px;
+    padding: 15px 30px;
 }
 
 /* hamburger nav styles */
-
 .hamburger {
-    display: none;
-    cursor: pointer;
-    position: fixed;
-    z-index: 100;
     background: transparent;
     border: none;
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    z-index: 100;
 }
 
 .hamburger span {
+    background-color: #000;
     display: block;
-    width: 25px;
     height: 3px;
     margin: 5px;
-    background-color: #000;
-    transition: all 0.3s ease;  
+    transition: all 0.3s ease;
+    width: 25px;
 }
 
 @media screen and (max-width: 768px) {
     .hamburger {
         display: block;
-        position: absolute;
         left: 20px;
+        position: absolute;
         top: 25px;
     }
 
-    
     nav ul {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: -0;
-        width: 100%;
-        height: 100vh;
-        background-color: white;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        z-index: 99;
-        text-align: center;
-        margin: 0;
+        background-color: white;
+        display: none;
+        flex-direction: column;
         gap: 25px;
+        height: 100vh;
+        justify-content: center;
+        left: -0;
+        margin: 0;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        z-index: 99;
     }
 
     nav.active ul {
@@ -174,31 +168,29 @@ body {
         z-index: 100;
     }
 
-
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
 
     .hamburger.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
         position: fixed;
+        transform: translateY(8px) rotate(45deg);
     }
 
     .hamburger.active span:nth-child(3) {
-        transform: translateY(-5px) rotate(-45deg);
         position: fixed;
+        transform: translateY(-5px) rotate(-45deg);
     }
-    
 }
 
 p {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Results page */
 #results-container {
-    max-width: 660px;
     margin: 50px auto;
+    max-width: 660px;
     padding: 20px;
     text-align: center;
 }
@@ -206,9 +198,9 @@ p {
 .result-card {
     background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(233, 28, 34, 0.4); 
-    padding: 30px;
+    box-shadow: 0 0 15px rgba(233, 28, 34, 0.4);
     margin-top: 20px;
+    padding: 30px;
 }
 
 .result-card h2 {
@@ -228,17 +220,17 @@ p {
 }
 
 .quiz-button {
-    display: block;
-    margin: 25px auto;
-    padding: 15px 30px;
-    font-size: 20px;
-    color: white;
+    -moz-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
+    -webkit-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
+    background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
     border: none;
     border-radius: 5px;
+    color: white;
     cursor: pointer;
-    background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
-    -webkit-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
-    -moz-background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
+    display: block;
+    font-size: 20px;
+    margin: 25px auto;
+    padding: 15px 30px;
     transition: transform 0.2s;
 }
 
@@ -247,4 +239,3 @@ p {
 }
 
 /*javascript classList for heading in results page */
-
