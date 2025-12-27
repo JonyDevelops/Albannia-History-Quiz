@@ -144,13 +144,10 @@ button::after,
 }
 
 .hero-card svg {
-    color: #E91C22;
-
-}
-
-.hero-card img {
-    color: #E91C22;
+    width: 50px;
     height: 50px;
+    color: #E91C22;
+    margin-bottom: 10px;
 }
 
 .hero-card h2 {
