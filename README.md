@@ -56,4 +56,8 @@ See the below lighthouse Report
 - Stack overFlow
 <br/>
 
+## Deployments
+This Project was deployed using netlify;
+https://albanniahistoryquiz.netlify.app/
+
    
