@@ -16,6 +16,10 @@
 
 </div>
 
+## Project Brief
+To build an online quiz where users can answer a series of questions and receive feedback or graded on their performance. 
+
+
 ## Built with
 
 [![Static Badge](https://img.shields.io/badge/HTML-white?style=flat-square&logo=html5)](https://www.freecodecamp.org/learn/2022/responsive-web-design/) <br/>
@@ -32,15 +36,18 @@
 #### JavaScript
 - No errors
 ## Web Accessibility Tests
-Completed
+See the below lighthouse Report
+![lighthouse Report](./Assets/images/lighthouse-report.png)
 <br/>
 
-## What did you think the biggest challenges would be with this Project?
-- Making the Quiz in JavaScript
+## Challenges
+- ForEach was hard for me to learn.
+- event.target
 <br/>
 
 ## Future improvements
-- Better JavaScript skills
+- Trigger an Event that plays background music when a user presses "Start Quiz".
+- In the future I would like to retry this with React.js.
 <br/>
 
 ## Resources that helped me
