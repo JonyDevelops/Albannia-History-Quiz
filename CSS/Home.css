@@ -1,137 +1,131 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
 body {
     background-color: #000000e1;
-    overflow-x: hidden;
-    width: 100%;
+    margin: 0;
 }
 
+
 nav {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
     background-color: #F8F7FD;
-    padding: 20px 5%; 
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    position: relative;
 }
 
 .navbar-title {
+    color: #E91C22;
+    display: flex;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #E91C22;
-    z-index: 1002;
+    margin-left: 60px;
+    margin-right: auto;
 }
 
 nav ul {
     display: flex;
     gap: 25px;
-    list-style: none;
-    align-items: center;
+    justify-content: right;
+    margin-right: 200px;
 }
 
 nav li {
-    font-size: 1.3rem;
-    position: relative;
-    padding: 5px 0;
-}
-
-nav a {
-    text-decoration: none;
     color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    list-style: none;
     position: relative;
-    z-index: 2;
+    text-align: center;
 }
 
 nav li::after {
-    content: '';
-    position: absolute;
-    left: 0;
+    background: red;
     bottom: 0;
-    width: 0%;
+    content: '';
     height: 2px;
-    background: #E91C22;
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1;
+    left: 0;
+    position: absolute;
+    transition: width 0.3s ease;
+    width: 0%;
 }
-
 
 nav li:hover::after {
     width: 100%;
 }
 
-nav li:first-child::after {
+nav li:nth-child(1):after {
+    background: #E91C22;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transition: width 0.3s ease;
     width: 100%;
 }
 
-
-
-
-
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
 .hamburger {
-    display: none;
-    cursor: pointer;
     background: transparent;
     border: none;
-    z-index: 1005;
+    cursor: pointer;
+    display: none;
     padding: 10px;
+    z-index: 1005;
 }
 
 .hamburger span {
+    background-color: #000;
     display: block;
-    width: 25px;
     height: 3px;
     margin: 5px 0;
-    background-color: #000;
-    transition: all 0.3s ease;  
+    transition: all 0.3s ease;
+    width: 25px;
 }
 
 .hero-image {
+    border-radius: 25px;
     display: block;
+    height: auto;
     margin: 40px auto;
     width: 40%;
-    height: auto;
-    border-radius: 25px;
 }
 
 .hero-section-heading {
-    text-align: center;
-    font-size: 40px;
     color: rgb(255, 255, 255);
-    margin: 50px 20px;
+    font-size: 40px;
     font-weight: 600;
+    margin: 50px 20px;
+    text-align: center;
 }
 
 .quiz-button {
-    display: block;                 
-    margin: 20px auto 30px auto;
-    padding: 15px 30px;
-    font-size: 20px;
-    color: white;
+    background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
     border: none;
     border-radius: 5px;
+    color: white;
     cursor: pointer;
-    background: linear-gradient(143deg, rgba(200, 88, 159, 0.91), rgba(255, 0, 0, 0.69));
+    display: block;
+    font-size: 20px;
+    margin: 20px auto 30px auto;
+    padding: 15px 30px;
     transition: transform 0.2s ease;
 }
 
 button::after,
-
 .quiz-button:hover {
     transform: scale(1.1);
 }
 
 .hero-card-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
     margin: 30px auto;
     max-width: 1200px;
     padding: 0 20px;
@@ -141,28 +135,26 @@ button::after,
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    height: 180px;
-    padding: 20px;
     display: flex;
     flex-direction: column;
+    height: 180px;
     justify-content: center;
+    padding: 20px;
+    width: 300px;
 }
 
 .hero-card svg {
     width: 50px;
     height: 50px;
     color: #E91C22;
-    margin-bottom: 10px;
 }
 
 .hero-card h2 {
-    font-size: 1.2rem;
     color: #E91C22;
+    font-size: 1.2rem;
 }
 
 @media screen and (max-width: 768px) {
-    /* Set nav to row-reverse so hamburger (last in HTML) stays on the left */
     nav {
         flex-direction: row-reverse;
         justify-content: space-between;
@@ -172,26 +164,25 @@ button::after,
         display: block;
     }
 
-    /* Move title explicitly to the right side of the nav row */
     .navbar-title {
         margin-left: auto;
         margin-right: 0;
     }
 
     nav ul {
+        align-items: center;
+        background-color: white;
         display: none;
+        flex-direction: column;
+        gap: 40px;
+        height: 100vh;
+        justify-content: center;
+        left: 0;
+        margin: 0;
         position: fixed;
         top: 0;
-        left: 0;
         width: 100%;
-        height: 100vh;
-        background-color: white;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         z-index: 1001;
-        gap: 40px;
-        margin: 0;
     }
 
     nav.active ul {
@@ -200,7 +191,7 @@ button::after,
 
     nav li {
         font-size: 1.8rem;
-        margin-right: 0; 
+        margin-right: 0;
     }
 
     .hero-image {
@@ -214,22 +205,27 @@ button::after,
     .hamburger.active span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
+
     .hamburger.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    /* Set nav to row-reverse so hamburger (last in HTML) stays on the left */
+    /* Move title explicitly to the right side of the nav row */
 }
 
 footer {
     background-color: white;
+    margin-top: 50px;
     padding: 20px;
     width: 100%;
-    margin-top: 50px;
 }
 
 footer p {
-    text-align: center;
     color: #333;
+    text-align: center;
 }

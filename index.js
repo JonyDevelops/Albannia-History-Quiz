@@ -127,7 +127,7 @@ function showQuestion(){
         }
 
         button.addEventListener("click", selectAnswer);
-        })
+        });
     }
 
 function resetState(){
@@ -138,7 +138,7 @@ function resetState(){
     }
 }
     function selectAnswer(e){
-        const selectedBtn = e.target
+        const selectedBtn = e.target;
         const isCorrect = selectedBtn.dataset.correct === "true";
 
         if(isCorrect){
@@ -155,7 +155,7 @@ function resetState(){
                 button.classList.add('correct');
             }
             button.disabled = true;
-        })
+        });
         
         nextBtn.style.display = "block";
     }
