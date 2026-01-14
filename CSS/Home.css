@@ -18,11 +18,12 @@ nav {
 .navbar-title {
     color: #E91C22;
     display: flex;
-    font-size: 1.5rem;
+    font-size: 1.5rem;  
     font-weight: bold;
     margin-left: 60px;
     margin-right: auto;
 }
+
 
 nav ul {
     display: flex;
@@ -149,9 +150,26 @@ button::after,
     color: #E91C22;
 }
 
+.hero-card-icon {
+    width: 60px;
+    height: 50px;
+    display: block;
+    object-fit: contain;
+}
+
 .hero-card h2 {
     color: #E91C22;
     font-size: 1.2rem;
+}
+
+.hero-image {
+    border-radius: 25px;
+    display: block;
+    height: auto;
+    margin: 40px auto;
+    width: 40%;
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -162,11 +180,6 @@ button::after,
 
     .hamburger {
         display: block;
-    }
-
-    .navbar-title {
-        margin-left: auto;
-        margin-right: 0;
     }
 
     nav ul {

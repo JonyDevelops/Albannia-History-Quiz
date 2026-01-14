@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Albannia History Quiz</title>
     <link rel="stylesheet" href="/CSS/Home.css">
+    <meta name="description" content="Test your knowledge of Albanian history with our engaging quiz! Explore key events, figures, and milestones that shaped Albania's rich heritage.">
     <script src="index.js" async></script>
 </head>
 
@@ -29,14 +30,21 @@
     </header>
     <div class="hero-section">
         <h1 class="hero-section-heading">How Well Do You Know Albanian History?</h1>
-        <img src="/Assets/images/hero-image.jpg" alt="Albania" class="hero-image" loading="lazy" fetchpriority="high">
+        <picture>
+            <source type="image/avif" srcset="/Assets/images/hero-image.avif">
+            <source type="image/webp" srcset="/Assets/images/hero-image.webp">
+            <img src="/Assets/images/hero-image.jpg" width="1600" height="900" alt="Albania" class="hero-image" fetchpriority="high">
+        </picture>
         <button class="quiz-button" onclick="window.location.href = '/Pages/quiz.html'">Take Quiz</button>
     </div>
 
     <div class="hero-card-container">
        <div class="hero-card">
-       
-                <img src="/Assets/images/Untitled-design.png" alt="Quiz Icon" class="hero-card-icon" loading="lazy" height="50px" width="60px">
+                <picture>
+                    <source type="image/avif" srcset="/Assets/images/Untitled-design.avif">
+                    <source type="image/webp" srcset="/Assets/images/Untitled-design.webp">
+                    <img src="/Assets/images/Untitled-design.png" alt="Quiz Icon" class="hero-card-icon" loading="lazy" height="50" width="60">
+                </picture>
                 <h2>Test Your Knowledge</h2>
                 <p>Take our comprehensive quiz to test your knowledge of Albanian history from ancient times to the modern era.</p>
 

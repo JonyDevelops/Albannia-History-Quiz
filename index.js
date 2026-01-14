@@ -202,6 +202,7 @@ function displayResults() {
         
         const heading = document.createElement('h2');
         heading.textContent = 'Quiz data not found. Please take the quiz first.';
+        heading.style.color = 'white';
         
         const link = document.createElement('a');
         link.href = './quiz.html';
