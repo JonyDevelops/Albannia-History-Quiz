@@ -31,12 +31,14 @@ To build an online quiz where users can answer a series of questions and receive
 
 #### HTML
 - Fixed illegal spaces in img tags
+- Major Performance Fixes, CLS fixes
 #### CSS:
 - Fixed <br/>
 #### JavaScript
 - No errors
 ## Web Accessibility Tests
 See the below lighthouse Report
+
 ![lighthouse Report](./Assets/images/lighthouse-report.PNG)
 <br/>
 
